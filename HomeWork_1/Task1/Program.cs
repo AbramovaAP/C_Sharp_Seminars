@@ -30,7 +30,15 @@ public class Answer {
     static void CompareNumbers(int firstNumber, int secondNumber)
     {
         // Введите свое решение ниже
+        if (firstNumber > secondNumber) {
+            Console.WriteLine($"Первое число `{firstNumber}` больше чем второе число `{secondNumber}`");
+        }
+        
+        else if (firstNumber < secondNumber) {
+        Console.WriteLine($"Первое число `{firstNumber}` меньше чем второе число `{secondNumber}`");
+        }
 
+        else {Console.WriteLine($"Введенные числа равны `{firstNumber}`");}
 
     }
 
@@ -44,8 +52,8 @@ public class Answer {
             secondNumber = int.Parse(args[1]);
         } else {
            // Здесь вы можете поменять значения для отправки кода на Выполнение
-            firstNumber = 5;
-            secondNumber = 5;
+            firstNumber = 3;
+            secondNumber = -5;
         }
 
         // Не удаляйте строки ниже
