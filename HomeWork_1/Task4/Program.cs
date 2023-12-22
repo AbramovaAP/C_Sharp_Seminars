@@ -18,7 +18,26 @@ public class Answer {
     static void PrintEvenNumbers(int number)
     {
       // Введите свое решение ниже
+      // int counter = 1;
 
+      //   if (counter % 2 == 0) {
+      //     if (counter <= number) {
+      //       Console.Write($"{counter}\t");}
+      //       counter = counter + 1;}
+      //   }
+      //   else {counter = counter + 1;}
+    
+      int counter = 1;
+
+      while (counter <= number){
+        if (counter % 2 == 0) 
+        {
+            Console.Write($"{counter}\t");
+            counter = counter + 1;
+        }
+         else {counter = counter + 1;}
+      }
+    
 
     }
 
