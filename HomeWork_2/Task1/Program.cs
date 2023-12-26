@@ -6,9 +6,9 @@
 //           a=7 => нет
 //           a=322 => да
 
-//int n = Convert.ToInt32(Console.ReadLine());
-int n = new Random().Next (100, 10000);
-if (n % 7 == 0 || n % 23 == 0) 
+int n = Convert.ToInt32(Console.ReadLine());
+//int n = new Random().Next (100, 10000);
+if (n % 7 == 0 & n % 23 == 0) 
 {
     Console.WriteLine ( $"Число: {n} - одновременно кратно и 7 и 23!");
 }
