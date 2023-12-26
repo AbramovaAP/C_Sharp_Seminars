@@ -7,25 +7,26 @@
 // 8 => 8
 // 9542 => 9,5,4,2
 
-// Мое решение не правильное, запятая выводится после крайней цифры
-// Console.Write("Введите число: ");
-// string s = Console.ReadLine();
-
-// for (int i=0; i < s.Length%10; i++) {
-//     Console.Write($"{s[i]}, ");
-// }
-   // Решение с ответов, результат чисел почему-то перевернут
+// Мое решение 
 Console.Write("Введите число: ");
-int N = Convert.ToInt32(Console.ReadLine());
+string s = Console.ReadLine();
 
-if (N < 10) {Console.Write(N);}
-else {
-    while (N > 0) {
-        int result = N % 10;
-        N/=10;
-        if (N > 0) {
-            Console.Write(result + ", ");
-        }
-        else {Console.Write(result);}
-    }
+for (int i=0; i < s.Length-1; i++) {
+    Console.Write($"{s[i]}, ");
 }
+Console.Write($"{s[s.Length-1]}");
+   // Решение с ответов, результат чисел почему-то перевернут
+// Console.Write("Введите число: ");
+// int N = Convert.ToInt32(Console.ReadLine());
+
+// if (N < 10) {Console.Write(N);}
+// else {
+//     while (N > 0) {
+//         int result = N % 10;
+//         N/=10;
+//         if (N > 0) {
+//             Console.Write(result + ", ");
+//         }
+//         else {Console.Write(result);}
+//     }
+// }
