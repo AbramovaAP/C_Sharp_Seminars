@@ -26,7 +26,7 @@ int SecondNumber = (input - (input / 100 * 100) - input % 10) / 10;
 //      (input - (input / 100 * 100) - input % 10) = (123 - 100 - 3) = 20
 //      (input - (input / 100 * 100) - input % 10) / 10 = 20 / 10 = 2 - второе число получено
 
-//Выводим второе и третьи числа:
+//Выводим второе и третье числа:
 Console.WriteLine("Второе число: " + SecondNumber + ", третье число: " + ThirdNumber);
 //Возводим второе число в степень, которая равна третьему числу (Y ^ Z)
 Console.WriteLine("Результат возведения в степень: " + SecondNumber + " ^ " + ThirdNumber + 
