@@ -1,2 +1,27 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// -----------------Задача 3------------------------
+// Напишите программу, которая принимает
+// на вход целое число из отрезка [10, 99] и показывает
+// наибольшую цифру числа.
+// Например:
+// 40 => 4
+// 96 => 9
+// 72 => 7
+int n = new Random().Next (10, 100);
+
+// int num1 = Convert.ToInt32(Convert.ToString(n[0]));
+// int num2 = Convert.ToInt32(Convert.ToString(n[1]));
+// if (num1 > num2) {
+//     Console.WriteLine ($"Максимальной цифрой числа: {n},  является цифра: {num1}");
+// }
+// else{
+//     Console.WriteLine ($"Максимальной цифрой числа: {n},  является цифра: {num2}");
+// }
+
+int num1 = n / 10; // получаем первую цифру числа
+int num2 = n % 10; // остаток от деления, т.е. вторая цифра числа
+if (num1 > num2) {
+    Console.WriteLine ($"Максимальной цифрой числа: {n},  является цифра: {num1}");
+}
+else{
+    Console.WriteLine ($"Максимальной цифрой числа: {n},  является цифра: {num2}");
+}
