@@ -10,8 +10,8 @@
 //int[] numbers = {1, 5, 10, 20, 30, 40, 99, 4, 90, 3}; // Создание массива
 
 //Выведем массив для наглядности:
-//         for(int i = 0; i < array.Length; i++){ 
-//             Console.Write($"{array[i]} ");
+//         for(int i = 0; i < numbers.Length; i++){ 
+//             Console.Write($"{numbers[i]} ");
 //         } 
 //         Console.WriteLine();// пробел
 
@@ -25,9 +25,32 @@
         //         counter++; // counter = counter + 1
         //     }
         // }
-//         }
 //         Console.WriteLine(counter);
 
+
+// //================Решение с функциями======================================
+  
+//  int [] numbers = new int[] {1, 5, 10, 20, 30, 40, 99, 4, 90, 3}; // Создание массива
+//     int CountItemsRange(int[] array, int minRange, int maxRange)
+//     {
+//         int counter = 0; //счетчик
+//         minRange = 10;
+//         maxRange = 90;
+
+// //Подсчитаем кол-во элементов между 10 и 90
+//         for(int i = 0; i < array.Length; i++){
+//             if (array[i] >= minRange & array[i] <= maxRange) {
+//                 counter++; // counter = counter + 1
+//             }
+//         }
+//     return counter;
+//     }
+// // Блок функции для вывода результата
+//      void PrintResult(int[] array)
+//     {
+//         Console.WriteLine(CountItemsRange(array, 10, 90));
+//     }
+//     PrintResult (numbers);
 
 //================Решение для автотеста 1======================================
 // using System;
@@ -126,7 +149,37 @@
 //         Console.WriteLine(counter);
 
 
-// //================Решение для автотеста======================================
+// //================Решение с функциями 2======================================
+  
+// int [] numbers = new int[] {1, 5, 10, 20, 30, 40, 99, 4, 90, 3}; // Создание массива
+
+// int CountEvenItems(int[] array)
+//     {
+//         int counter = 0; //счетчик
+
+// //Выведем массив для наглядности:
+//         for(int i = 0; i < array.Length; i++){ 
+//             Console.Write($"{array[i]} ");
+//         } 
+//         Console.WriteLine();// пробел
+
+// //Подсчитаем кол-во четных элементов
+//         for(int i = 0; i < array.Length; i++){
+//             if (array[i] % 2 == 0) {
+//                 counter++; 
+//             }
+//         }
+//         return counter;
+//     }
+// // Блок функции для вывода результата   
+// void PrintResult(int[] array)
+//     {
+//         Console.WriteLine(CountEvenItems(array));
+//     }
+//     PrintResult (numbers);
+
+
+// //================Решение для автотеста 2======================================
 // using System;
 // using System.Linq;
 
@@ -200,7 +253,7 @@
 //int[] array = {0.25, 5.4, 1.3, 2.1, 3.8, 5.2, 3.01}; // Создание массива
 //Выводится: 5.15
 
-//Мой рабочий вариант без случайного массива
+// //Мой рабочий вариант без случайного массива
 //         double[] array = new double[] {0.25, 5.4, 1.3, 2.1, 3.8, 5.2, 3.01}; //Задали одномерный массив из 10 целых чисел. 
 //         double max = array[0];
 //         double min = array[0];
@@ -225,76 +278,116 @@
 //         Console.WriteLine(max - min);
 
 
-
-
-//================Решение для автотеста======================================
-using System;
-using System.Linq;
-
-//Тело класса будет написано студентом. Класс обязан иметь статический метод PrintResult()
-class UserInputToCompileForTest
-{ 
-    // Разница между максимальным и минимальным элементами массива
- 
-    // Нахождение минимума массива
-    public static double FindMin(double[] numbers)
+//================Решение с функциями 3======================================
+  
+double[] array = new double[] {0.25, 5.4, 1.3, 2.1, 3.8, 5.2, 3.01}; // Создание массива
+//Выведем массив для наглядности:
+        for(int i = 0; i < array.Length; i++){ 
+            Console.Write($"{array[i]} ");
+        } 
+        Console.WriteLine();// пробел
+// Нахождение минимума массива
+double FindMin(double[] numbers)
     {
-        //Напишите свое решение здесь
         double min = numbers[0];
          for(int i = 0; i < numbers.Length; i++){ 
             if (numbers[i] < min) {
                 min = numbers[i];
             }
         }
+        Console.WriteLine(min);
         return min;
     }
-    
-    // Нахождение максимума массива
-    public static double FindMax(double[] numbers)
+// Нахождение максимума массива
+double FindMax(double[] numbers)
     {
-        
-        //Напишите свое решение здесь
         double max = numbers[0]; 
         for(int i = 0; i < numbers.Length; i++){ 
             if (numbers[i] > max) {
                 max = numbers[i];
             }
          }
+         
+         Console.WriteLine(max);
          return max;
     }
-    
-    public static void PrintResult(double[] array)
+// Блок функции для вывода результата      
+void PrintResult(double[] numbers)
     {
-//Напишите свое решение здесь
-
-        double Result = FindMax(array) - FindMin (array);
+        double Result = FindMax(numbers) - FindMin (numbers);
         Console.WriteLine(Result);
     }
-}
+PrintResult(array);
 
-//Не удаляйте и не меняйте класс Answer!
-class Answer
-{
-    public static void Main(string[] args)
-    {
-        double[] array;
+
+// //================Решение для автотеста 3======================================
+// using System;
+// using System.Linq;
+
+// //Тело класса будет написано студентом. Класс обязан иметь статический метод PrintResult()
+// class UserInputToCompileForTest
+// { 
+//     // Разница между максимальным и минимальным элементами массива
+ 
+//     // Нахождение минимума массива
+//     public static double FindMin(double[] numbers)
+//     {
+//         //Напишите свое решение здесь
+//         double min = numbers[0];
+//          for(int i = 0; i < numbers.Length; i++){ 
+//             if (numbers[i] < min) {
+//                 min = numbers[i];
+//             }
+//         }
+//         return min;
+//     }
+    
+//     // Нахождение максимума массива
+//     public static double FindMax(double[] numbers)
+//     {
+        
+//         //Напишите свое решение здесь
+//         double max = numbers[0]; 
+//         for(int i = 0; i < numbers.Length; i++){ 
+//             if (numbers[i] > max) {
+//                 max = numbers[i];
+//             }
+//          }
+//          return max;
+//     }
+    
+//     public static void PrintResult(double[] array)
+//     {
+// //Напишите свое решение здесь
+
+//         double Result = FindMax(array) - FindMin (array);
+//         Console.WriteLine(Result);
+//     }
+// }
+
+// //Не удаляйте и не меняйте класс Answer!
+// class Answer
+// {
+//     public static void Main(string[] args)
+//     {
+//         double[] array;
         
 
-        if (args.Length >= 1) {
-            // Объединяем все аргументы командной строки в одну строку
-            string joinedArgs = string.Join(" ", args);
+//         if (args.Length >= 1) {
+//             // Объединяем все аргументы командной строки в одну строку
+//             string joinedArgs = string.Join(" ", args);
 
-            // Разделяем строку по запятой с пробелом и преобразуем в массив целых чисел
-            array = joinedArgs.Split(", ")
-                                  .Select(double.Parse)
-                                  .ToArray();
+//             // Разделяем строку по запятой с пробелом и преобразуем в массив целых чисел
+//             array = joinedArgs.Split(", ")
+//                                   .Select(double.Parse)
+//                                   .ToArray();
             
-            // Теперь arr содержит преобразованные в целые числа из командной строки
+//             // Теперь arr содержит преобразованные в целые числа из командной строки
         
-        } else {
-           // Если аргументов на входе нет
-            array = new double[] {0.25, 5.4, 1.3, 2.1, 3.8, 5.2, 3.01}; // Создание массива
-        }
-        UserInputToCompileForTest.PrintResult(array);
-    }
-}
+//         } else {
+//            // Если аргументов на входе нет
+//             array = new double[] {0.25, 5.4, 1.3, 2.1, 3.8, 5.2, 3.01}; // Создание массива
+//         }
+//         UserInputToCompileForTest.PrintResult(array);
+//     }
+// }
