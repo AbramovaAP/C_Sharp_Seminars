@@ -2,41 +2,41 @@
 //Напишите программу, которая бесконечно запрашивает целые числа с консоли.
 //Программа завершается при вводе символа ‘q’ или при вводе числа, сумма цифр которого чётная.
 
-using System;
-class Program
-{
-    static void Main()
-    {
-        while (true) // Бесконечный цикл
-        {
-            Console.Write("Введите любое число или 'q' для выхода: ");
-            string input = Console.ReadLine(); // Чтение строки ввода пользователя
+// using System;
+// class Program
+// {
+//     static void Main()
+//     {
+//         while (true) // Бесконечный цикл
+//         {
+//             Console.Write("Введите любое число или 'q' для выхода: ");
+//             string input = Console.ReadLine(); // Чтение строки ввода пользователя
             
-            if (input == "q") { // Проверка на ввод 'q' для выхода
-                break;
-            }
+//             if (input == "q") { // Проверка на ввод 'q' для выхода
+//                 break;
+//             }
 
-            int number;
-            if (int.TryParse(input, out number)) {// Проверка, является ли ввод числом{
-                int sum = 0;
-                    while (number > 0) { // Вычисление суммы цифр числа
-                    sum += number % 10; // Добавление последней цифры к сумме
-                    number /= 10; // Удаление последней цифры из числа
-                    }
+//             int number;
+//             if (int.TryParse(input, out number)) {// Проверка, является ли ввод числом{
+//                 int sum = 0;
+//                     while (number > 0) { // Вычисление суммы цифр числа
+//                     sum += number % 10; // Добавление последней цифры к сумме
+//                     number /= 10; // Удаление последней цифры из числа
+//                     }
 
-                if (sum % 2 == 0){ // Проверка, является ли сумма цифр четной
-                Console.WriteLine("[STOP]");
-                break;
-                }
-            }
+//                 if (sum % 2 == 0){ // Проверка, является ли сумма цифр четной
+//                 Console.WriteLine("[STOP]");
+//                 break;
+//                 }
+//             }
 
-            else // Если ввод не является числом и не 'q', повторить запрос
-            {
-            Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число или 'q': ");
-            }
-        }
-    }
-}
+//             else // Если ввод не является числом и не 'q', повторить запрос
+//             {
+//             Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число или 'q': ");
+//             }
+//         }
+//     }
+// }
 
 
 //===============================================================================================================
@@ -124,32 +124,32 @@ class Program
 // //Напишите программу, которая перевернёт одномерный массив 
 // //(первый элемент станет последним, второй – предпоследним и т.д.)
 
-// using System;
-// class Program
-// {
-//     static void Main()
-//     {
-//         int[] numbers = { 1, 3, 5, 6, 7, 8 }; // Исходный массив
-//         int temp;
-//         // Вывод исходного массива
-//         Console.Write("Исходный массив: ");
-//         foreach (int number in numbers)
-//         {
-//             Console.Write(number + " ");
-//         }
-//         // Реверсирование массива
-//         for (int i = 0; i < numbers.Length / 2; i++)
-//         {
-//             // Меняем местами элементы
-//             temp = numbers[i];
-//             numbers[i] = numbers[numbers.Length - 1 - i];
-//             numbers[numbers.Length - 1 - i] = temp;
-//         }
-//         // Вывод измененного массива
-//         Console.Write("\nПеревернутый массив: ");
-//         foreach (int number in numbers)
-//         {
-//             Console.Write(number + " ");
-//         }
-//     }
-// }
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 1, 3, 5, 6, 7, 8 }; // Исходный массив
+        int temp;
+        // Вывод исходного массива
+        Console.Write("Исходный массив: ");
+        foreach (int number in numbers)
+        {
+            Console.Write(number + " ");
+        }
+        // Реверсирование массива
+        for (int i = 0; i < numbers.Length / 2; i++)
+        {
+            // Меняем местами элементы
+            temp = numbers[i];
+            numbers[i] = numbers[numbers.Length - 1 - i];
+            numbers[numbers.Length - 1 - i] = temp;
+        }
+        // Вывод измененного массива
+        Console.Write("\nПеревернутый массив: ");
+        foreach (int number in numbers)
+        {
+            Console.Write(number + " ");
+        }
+    }
+}
