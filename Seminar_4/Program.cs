@@ -3,50 +3,50 @@
 //заполненный случайными числами. 
 //Определите кол-во простых чисел в этом массиве.
 
-// //Печать массива
-// void Print_mas(int[] col)
-// {
-//     foreach(var item in col){
-//         Console.Write($"{item}\t");
-//     }
-//     Console.WriteLine();
-// }
+//Печать массива
+void Print_mas(int[] col)
+{
+    foreach(var item in col){
+        Console.Write($"{item}\t");
+    }
+    Console.WriteLine();
+}
 
-// //Заполним массив случайными числами:
-// int[] Random_mas(int[] col)
-// {
-//     for(int i = 0; i < col.Length; i++)
-//     {
-//         col[i] = new Random().Next(2,20);
-//     }
-//     return col;
-// }
+//Заполним массив случайными числами:
+int[] Random_mas(int[] col)
+{
+    for(int i = 0; i < col.Length; i++)
+    {
+        col[i] = new Random().Next(2,20);
+    }
+    return col;
+}
 
-// //Является ли число массива простым
-// bool simple(int num)
-// {
-//     for(int i = 2; i < num; i++) //for(int i = 2; i <= Convert.ToInt32(Math.Sqrt(num)); i++) - для уменьшения итераций, выполняемых программой
-//     {
-//         if(num % i == 0) return false;
-//     }
-//     return true;
-// }
+//Является ли число массива простым
+bool simple(int num)
+{
+    for(int i = 2; i < num; i++) //for(int i = 2; i <= Convert.ToInt32(Math.Sqrt(num)); i++) - для уменьшения итераций, выполняемых программой
+    {
+        if(num % i == 0) return false;
+    }
+    return true;
+}
 
-// //Кол-во простых элементов 
-// int Count(int[] col)
-// {
-//     int count = 0;
-//     foreach(var item in col)
-//     {
-//         if (simple(item)) count++;
-//     }
-//     return count;
-// }
+//Кол-во простых элементов 
+int Count(int[] col)
+{
+    int count = 0;
+    foreach(var item in col)
+    {
+        if (simple(item)) count++;
+    }
+    return count;
+}
 
-// //Вывод результатов:
-// int[] mas = Random_mas(new int[10]);
-// Print_mas (mas);
-// Console.WriteLine(Count(mas));
+//Вывод результатов:
+int[] mas = Random_mas(new int[10]);
+Print_mas (mas);
+Console.WriteLine(Count(mas));
 
 //=============================================================================================================================
 //=============================================================================================================================
@@ -125,43 +125,43 @@
 //Н-р, [1 3 2 4 2 3] => 132423
 //     [2 3 1] => 231
 
-//1. Создаем команду, которая на вход будет принимать размерность массива:
-Console.Write("Введите размерность массива (не больше 8): ");
-int n = Convert.ToInt32(Console.ReadLine());
+// //1. Создаем команду, которая на вход будет принимать размерность массива:
+// Console.Write("Введите размерность массива (не больше 8): ");
+// int n = Convert.ToInt32(Console.ReadLine());
 
-//2. Создать массив из N случайных целых чисел
-int[] Array_rnd(int n) {
-    int[] array = new int[n]; //- сначала задаем пустой массив размерностью n, чтобы потом записать в него числа
-    //цикл для перебора случайных цифр и заполнение ими массива
-    for (int i = 0; i < n; i++)
-    {
-        array[i] = new Random().Next(0, 10);
-        //if(i==0) array[i]=0; //проверка, если первый элемент будет равен 0, то в конечном слиянии он отбросится.
-    }
-    return array; //возвращаем(запоминаем) заполненный массив
-}
-//3. Выводим массив случайных чисел 
-void PrintArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++){
-        Console.Write($"{array[i]} ");
-    }
-    Console.WriteLine();
-}
+// //2. Создать массив из N случайных целых чисел
+// int[] Array_rnd(int n) {
+//     int[] array = new int[n]; //- сначала задаем пустой массив размерностью n, чтобы потом записать в него числа
+//     //цикл для перебора случайных цифр и заполнение ими массива
+//     for (int i = 0; i < n; i++)
+//     {
+//         array[i] = new Random().Next(0, 10);
+//         //if(i==0) array[i]=0; //проверка, если первый элемент будет равен 0, то в конечном слиянии он отбросится.
+//     }
+//     return array; //возвращаем(запоминаем) заполненный массив
+// }
+// //3. Выводим массив случайных чисел 
+// void PrintArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write($"{array[i]} ");
+//     }
+//     Console.WriteLine();
+// }
 
-int[] array = Array_rnd(n);//записываем созданный массив в отдельную переменную
-PrintArray(array); //запускаем функцию PrintArray с переменной array, для печати массива в консоли
-Console.WriteLine();
+// int[] array = Array_rnd(n);//записываем созданный массив в отдельную переменную
+// PrintArray(array); //запускаем функцию PrintArray с переменной array, для печати массива в консоли
+// Console.WriteLine();
 
-//4. Формируем число из элементов массива
-int Numbers(int[] arr)
-{
-    int result = 0; //переменная, отвечающая за "слепок" будущего числа
-    for (int i = 0; i < arr.Length; i++){
-        result = result * 10 + arr[i];
-    }
-    return result;
-}
+// //4. Формируем число из элементов массива
+// int Numbers(int[] arr)
+// {
+//     int result = 0; //переменная, отвечающая за "слепок" будущего числа
+//     for (int i = 0; i < arr.Length; i++){
+//         result = result * 10 + arr[i];
+//     }
+//     return result;
+// }
 
-int num = Numbers(array); //записываем собранное число в отдельную переменную
-Console.WriteLine(num); // Выводим получившееся число на консоль
+// int num = Numbers(array); //записываем собранное число в отдельную переменную
+// Console.WriteLine(num); // Выводим получившееся число на консоль
