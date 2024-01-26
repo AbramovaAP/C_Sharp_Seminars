@@ -6,41 +6,41 @@
 // “world” => 1
 
 //1.
-// void Count(string str)
-// {
-//     string vowes = "aoueiy";
-//     int count = 0;
-
-//     foreach (var vo in vowes)
-//     {
-//         foreach (var s in str)
-//         {
-//             if (vo == s) count++;
-//         }
-//     }
-//     Console.WriteLine(count);
-// }
-
-
-// string st = Console.ReadLine()!; //!- не будет предупреждения о пустой строке
-
-// Count(st);
-
-
-//2.
 void Count(string str)
 {
-    string vowes = "aeiouy";
-    int counter = 0;
-    foreach (var Letter in str)
+    string vowes = "aoueiy";
+    int count = 0;
+
+    foreach (var vo in vowes)
     {
-        if (vowes.Contains(Letter))
+        foreach (var s in str)
         {
-            counter++;
+            if (vo == s) count++;
         }
     }
-    Console.WriteLine(counter);
+    Console.WriteLine(count);
 }
-string st = Console.ReadLine();
+
+
+string st = Console.ReadLine()!; //!- не будет предупреждения о пустой строке
+
 Count(st);
+
+
+// //2.
+// void Count(string str)
+// {
+//     string vowes = "aeiouy";
+//     int counter = 0;
+//     foreach (var Letter in str)
+//     {
+//         if (vowes.Contains(Letter))
+//         {
+//             counter++;
+//         }
+//     }
+//     Console.WriteLine(counter);
+// }
+// string st = Console.ReadLine();
+// Count(st);
 
