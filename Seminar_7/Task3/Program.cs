@@ -9,3 +9,14 @@
 //          “Hello world!” => H l l w r l d
 
 //=============Решение==============
+void String(string s)
+{
+    if (s.Length == 0) return;
+    string volvels = "aoueiy";
+    if (volvels.Contains(s[0]) == false)
+    {Console.Write($"{s[0]} ");}
+    String(s[1..]);
+}
+
+string st = Console.ReadLine()!;
+String(st);
