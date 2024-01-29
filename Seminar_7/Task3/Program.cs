@@ -8,7 +8,7 @@
 //          “World” => W r l d
 //          “Hello world!” => H l l w r l d
 
-//=============Решение==============
+//============= Решение ==============
 void String(string s)
 {
     if (s.Length == 0) return;
